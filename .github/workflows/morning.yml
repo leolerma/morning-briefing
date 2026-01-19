@@ -1,0 +1,36 @@
+name: Morning Briefing
+
+on:
+  schedule:
+    - cron: "0 13 * * *"  # 8 AM CST
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install feedparser yfinance openai
+
+      - name: Run morning briefing
+        run: python morning_briefing.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Commit audio output
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add docs/audio
+          git commit -m "Daily briefing"
+          git push
