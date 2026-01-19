@@ -107,8 +107,10 @@ def text_to_speech(text, filename):
 # -------------------------
 if __name__ == "__main__":
     date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    audio_path = "morning_briefing.mp3"
+    os.makedirs("docs/audio", exist_ok=True)
 
+    audio_path = "docs/audio/morning_briefing.mp3"
+    
     print("Fetching news...")
     news = fetch_news()
 
