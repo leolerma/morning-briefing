@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Morning Tech Briefing</title>
+    <description>
+      Daily AI-generated briefing covering EVs, semiconductors, Schaeffler, and Lear.
+    </description>
+    <language>en-us</language>
+    <itunes:author>Leo</itunes:author>
+    <itunes:explicit>false</itunes:explicit>
+
+    <item>
+      <title>Morning Briefing – Latest Update</title>
+      <description>Automated daily market briefing.</description>
+      <enclosure
+        url="https://leolerma.github.io/morning-briefing/audio/morning_briefing.mp3"
+        length="1234567"
+        type="audio/mpeg"/>
+      <guid>morning-briefing</guid>
+      <pubDate>Mon, 15 Jan 2026 08:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
