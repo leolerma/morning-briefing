@@ -27,3 +27,9 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           python morning_briefing.py
+
+      - name: Upload audio artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: morning-briefing-audio
+          path: morning_briefing.mp3
