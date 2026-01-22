@@ -3,7 +3,7 @@ name: Morning Briefing
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 13 * * *"  # 8 AM Central (GitHub uses UTC)
+    - cron: "0 11 * * 1-5"  # 8 AM Central (GitHub uses UTC)
 
 jobs:
   run-briefing:
